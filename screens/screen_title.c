@@ -9,7 +9,8 @@
 typedef enum Selected { PLAY=0, OPTIONS } Selected;
 static int finishScreen;
 static Selected selected;
-
+extern const int screenWidth;
+extern const int screenHeight; 
 //----------------------------------------------------------------------------------
 // Title Screen Functions Definition
 //----------------------------------------------------------------------------------
