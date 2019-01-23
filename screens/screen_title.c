@@ -6,8 +6,9 @@
 //----------------------------------------------------------------------------------
 
 // Title screen global variables
-static int framesCounter;
+typedef enum Selected { PLAY=0, OPTIONS } Selected;
 static int finishScreen;
+static Selected selected;
 
 //----------------------------------------------------------------------------------
 // Title Screen Functions Definition
@@ -17,29 +18,42 @@ static int finishScreen;
 void InitTitleScreen(void)
 {
     // TODO: Initialize TITLE screen variables here!
-    framesCounter = 0;
     finishScreen = 0;
+    selected = PLAY;
 }
 
 // Title Screen Update logic
 void UpdateTitleScreen(void)
 {
     // TODO: Update TITLE screen variables here!
-
-    if (IsKeyPressed(KEY_ENTER))
+    int key = GetKeyPressed();
+    switch (key)
     {
-        //finishScreen = 1;   // OPTIONS
-        finishScreen = 2;   // GAMEPLAY
+        case KEY_UP: 
+        case KEY_DOWN:
+            ~selected;
+            break;
+        case KEY_ENTER:
+            if (selected == PLAY)
+                finishScreen = 2;
+            else
+                finishScreen = 1;
+            break;
     }
 }
 
 // Title Screen Draw logic
 void DrawTitleScreen(void)
 {
-    // TODO: Draw TITLE screen here!
-    DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), GREEN);
-    DrawText("TITLE SCREEN", 20, 20, 40, DARKGREEN);
-    DrawText("PRESS ENTER or TAP to JUMP to GAMEPLAY SCREEN", 120, 220, 20, DARKGREEN);
+    if (selected == PLAY)
+        DrawRectangle(screenWidth/4, (screenHeight/6)*2, screenWidth/6, screenHeight/2, DARKGRAY);
+    else
+        DrawRectangle(screenWidth/4, (screenHeight/6)*2, screenWidth/6, screenHeight/2, LIGHTGRAY);
+    if (selected == OPTIONS)
+        DrawRectangle(screenWidth/4, (screenHeight/6)*3, screenWidth/6, screenHeight/2, DARKGRAY);
+    else
+        DrawRectangle(screenWidth/4, (screenHeight/6)*3, screenWidth/6, screenHeight/2, LIGHTGRAY);
+    
 }
 
 // Title Screen Unload logic
