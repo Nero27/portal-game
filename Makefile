@@ -3,7 +3,7 @@ CC = gcc
 CFLAGS += -O1 -s -Wall -std=c11 -Wextra
 LDLIBS = -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 
-all: portalgame
+all: portalgame main.o screen_logo.o screen_title.o screen_options.o screen_gameplay.o screen_ending.o
 
 portalgame: $(OBJS)
 	$(CC) -o portalgame main.o screen_logo.o screen_title.o screen_options.o screen_gameplay.o screen_ending.o $(CFLAGS) $(LDLIBS)
