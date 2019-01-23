@@ -50,7 +50,7 @@ void DrawTitleScreen(void)
         DrawRectangle(screenWidth/4, (screenHeight/6)*2, screenWidth/6, screenHeight/2, DARKGRAY);
     else
         DrawRectangle(screenWidth/4, (screenHeight/6)*2, screenWidth/6, screenHeight/2, LIGHTGRAY);
-    if (selected == OPTIONS)
+    if (selected == OPTION)
         DrawRectangle(screenWidth/4, (screenHeight/6)*3, screenWidth/6, screenHeight/2, DARKGRAY);
     else
         DrawRectangle(screenWidth/4, (screenHeight/6)*3, screenWidth/6, screenHeight/2, LIGHTGRAY);
