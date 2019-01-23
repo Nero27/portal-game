@@ -6,7 +6,7 @@
 //----------------------------------------------------------------------------------
 
 // Title screen global variables
-typedef enum Selected { PLAY=0, OPTIONS } Selected;
+typedef enum Selected { PLAY=0, OPTION } Selected;
 static int finishScreen;
 static Selected selected;
 extern const int screenWidth;
