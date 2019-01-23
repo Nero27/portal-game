@@ -6,7 +6,6 @@
 //----------------------------------------------------------------------------------
 
 // Logo screen global variables
-static int framesCounter;
 static int finishScreen;
 
 //----------------------------------------------------------------------------------
@@ -16,37 +15,23 @@ static int finishScreen;
 // Logo Screen Initialization logic
 void InitLogoScreen(void)
 {
-    // TODO: Initialize LOGO screen variables here!
-    framesCounter = 0;
     finishScreen = 0;
 }
 
 // Logo Screen Update logic
 void UpdateLogoScreen(void)
 {
-    // TODO: Update LOGO screen variables here!
-
-    framesCounter++;    // Count frames
-
-    // Wait for 2 seconds (120 frames) before jumping to TITLE screen
-    if (framesCounter > 120)
-    {
-        finishScreen = true;
-    }
+    finishScreen = true;
 }
 
 // Logo Screen Draw logic
 void DrawLogoScreen(void)
 {
-    // TODO: Draw LOGO screen here!
-    DrawText("LOGO SCREEN", 20, 20, 40, LIGHTGRAY);
-    DrawText("WAIT for 2 SECONDS...", 290, 220, 20, GRAY);
 }
 
 // Logo Screen Unload logic
 void UnloadLogoScreen(void)
 {
-    // TODO: Unload LOGO screen variables here!
 }
 
 // Logo Screen should finish?
